@@ -1,0 +1,347 @@
+.modules-section {
+  padding: clamp(56px, 6vw, 80px) 24px;
+
+  background-color: #ffffff;
+}
+
+
+.modules-container {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+}
+
+
+/* Encabezado */
+
+.modules-heading {
+  max-width: 720px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+.modules-label {
+  display: inline-block;
+
+  padding: 7px 14px;
+
+  color: #006b94;
+
+  background-color: #e7f3f8;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.modules-heading h2 {
+  margin-top: 16px;
+
+  color: #0f172a;
+
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+}
+
+
+.modules-heading h2 span {
+  color: #005b88;
+}
+
+
+.modules-heading p {
+  max-width: 620px;
+
+  margin: 16px auto 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+
+/* Grid */
+
+.modules-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: clamp(18px, 2vw, 24px);
+
+  margin-top: 42px;
+}
+
+
+/* Tarjeta */
+
+.module-card {
+  position: relative;
+
+  height: 260px;
+
+  overflow: hidden;
+
+  background-color: #f8fafc;
+
+  border: 1px solid #dbe4ee;
+  border-radius: 20px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.module-card:hover,
+.module-card:focus {
+  transform: translateY(-6px);
+
+  border-color: #93c5d8;
+
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Vista principal */
+
+.module-card-front {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  padding: 24px;
+
+  text-align: center;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.module-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 90px;
+  height: 90px;
+
+  color: #00739d;
+
+  background-color: #e4f1f6;
+
+  border-radius: 24px;
+}
+
+
+.module-card-front h3 {
+  margin-top: 24px;
+
+  color: #0f172a;
+
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+
+.module-more {
+  margin-top: 8px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* Capa de información */
+
+.module-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 24px;
+
+  opacity: 0;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #004b75,
+      #006b94
+    );
+
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.module-card:hover .module-card-overlay,
+.module-card:focus .module-card-overlay {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.module-card:hover .module-card-front,
+.module-card:focus .module-card-front {
+  opacity: 0;
+
+  transform: translateY(-10px);
+}
+
+
+/* Texto overlay */
+
+.module-card-overlay h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+
+.module-card-overlay p {
+  margin-top: 12px;
+
+  color: #e2e8f0;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+
+/* Lista */
+
+.module-card-overlay ul {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+
+  list-style: none;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.module-card-overlay li {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.module-card-overlay li span {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  background-color: #67d5f2;
+
+  border-radius: 50%;
+}
+
+
+/* Laptop pequeña */
+
+@media (max-width: 1150px) {
+  .modules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .module-card {
+    height: 240px;
+  }
+}
+
+
+/* Tablet */
+
+@media (max-width: 850px) {
+  .modules-section {
+    padding: clamp(56px, 6vw, 80px) 24px;
+  }
+
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* Celular */
+
+@media (max-width: 600px) {
+  .modules-section {
+    padding: clamp(56px, 6vw, 72px) 20px;
+  }
+
+  .modules-heading h2 {
+    font-size: clamp(32px, 8vw, 38px);
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 36px;
+  }
+
+  .module-card {
+    height: 230px;
+  }
+}

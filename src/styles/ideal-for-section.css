@@ -1,0 +1,310 @@
+.ideal-section {
+  background-color: #ffffff;
+  padding: clamp(56px, 6vw, 80px) 24px;
+}
+
+.ideal-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* Encabezado */
+
+.ideal-heading {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ideal-label {
+  color: #0081a7;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.ideal-heading h2 {
+  margin: 16px 0 0;
+
+  color: #0f172a;
+
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+.ideal-heading h2 span {
+  color: #005b88;
+}
+
+.ideal-heading > p {
+  max-width: 680px;
+
+  margin: 20px auto 0;
+
+  color: #64748b;
+
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+
+/* Tarjetas */
+
+.ideal-grid {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: clamp(24px, 3vw, 32px);
+
+  margin-top: clamp(42px, 5vw, 56px);
+}
+
+.ideal-card {
+  grid-column: span 2;
+
+  padding: 28px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.ideal-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #bae6fd;
+
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.ideal-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.ideal-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.ideal-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  color: #0081a7;
+
+  background-color: #ecfeff;
+
+  border-radius: 16px;
+}
+
+.ideal-card h3 {
+  margin: 20px 0 0;
+
+  color: #0f172a;
+
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.ideal-card p {
+  margin: 10px 0 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+
+/* Bloque inferior */
+
+.ideal-current {
+  display: grid;
+
+  grid-template-columns: 0.9fr 1.1fr;
+
+  align-items: center;
+
+  gap: clamp(32px, 5vw, 64px);
+
+  margin-top: 64px;
+  padding: 48px;
+
+  background-color: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+}
+
+.ideal-current-text span {
+  color: #0081a7;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ideal-current-text h3 {
+  margin: 14px 0 0;
+
+  color: #0f172a;
+
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1.25;
+
+  letter-spacing: -0.02em;
+}
+
+.ideal-current-text p {
+  margin: 18px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+
+/* Checklist */
+
+.ideal-checklist {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 14px;
+}
+
+.ideal-check {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.ideal-check > div {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  color: #0081a7;
+
+  background-color: #ecfeff;
+
+  border-radius: 9px;
+}
+
+.ideal-check span {
+  color: #475569;
+
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+
+/* Tablet */
+
+@media (max-width: 950px) {
+  .ideal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ideal-card,
+  .ideal-card:nth-child(4),
+  .ideal-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .ideal-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .ideal-current {
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+}
+
+
+/* Celular */
+
+@media (max-width: 650px) {
+  .ideal-section {
+    padding: clamp(56px, 6vw, 72px) 20px;
+  }
+
+  .ideal-heading h2 {
+    font-size: clamp(32px, 8vw, 40px);
+  }
+
+  .ideal-heading > p {
+    font-size: 16px;
+  }
+
+  .ideal-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 42px;
+  }
+
+  .ideal-card,
+  .ideal-card:last-child {
+    grid-column: auto;
+  }
+
+  .ideal-current {
+    margin-top: 48px;
+    padding: 26px;
+  }
+
+  .ideal-current-text h3 {
+    font-size: 23px;
+  }
+
+  .ideal-checklist {
+    grid-template-columns: 1fr;
+  }
+}
