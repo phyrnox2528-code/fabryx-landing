@@ -83,24 +83,7 @@
   border-radius: 18px;
 }
 
-.solution-highlight-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 46px;
-  height: 46px;
-
-  flex-shrink: 0;
-
-  color: #0081a7;
-
-  background-color: #ffffff;
-
-  border-radius: 14px;
-
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
-}
 
 .solution-highlight h3 {
   margin: 0;

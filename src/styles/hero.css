@@ -3,11 +3,20 @@
 
   overflow: hidden;
 
-  background-color: #f8fafc;
+  background:
+    radial-gradient(
+      circle at 18% 45%,
+      rgba(0, 129, 167, 0.07) 0%,
+      rgba(0, 129, 167, 0.025) 28%,
+      transparent 55%
+    ),
+    #f8fafc;
 }
 
 
-/* Fondo */
+/* =========================
+   Fotografía
+========================= */
 
 .hero__background {
   position: absolute;
@@ -15,7 +24,7 @@
   top: 0;
   right: 0;
 
-  width: 57%;
+  width: 60%;
   height: 100%;
 
   overflow: hidden;
@@ -28,40 +37,81 @@
 
   object-fit: cover;
   object-position: center;
+
+  transform: scale(1.03);
+
+  animation:
+    heroImageMove 12s ease-in-out infinite alternate;
+
+  will-change: transform;
 }
 
 
-/* Toque azul sobre la fotografía */
+/* Animación suave de la imagen */
+
+@keyframes heroImageMove {
+
+  0% {
+    transform:
+      scale(1.03)
+      translateX(0);
+  }
+
+  50% {
+    transform:
+      scale(1.055)
+      translateX(-6px);
+  }
+
+  100% {
+    transform:
+      scale(1.04)
+      translateX(4px);
+  }
+}
+
+
+/* Tono azul */
 
 .hero__image-blue {
   position: absolute;
 
   inset: 0;
 
-  background-color: rgba(0, 75, 117, 0.25);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 75, 117, 0.12),
+      rgba(0, 91, 136, 0.3)
+    );
 }
 
 
-/* Transición orgánica entre fondo blanco e imagen */
+/* Unión entre fondo e imagen */
 
 .hero__image-fade {
   position: absolute;
 
   inset: 0;
 
-  background: linear-gradient(
-    90deg,
-    #f8fafc 0%,
-    rgba(248, 250, 252, 0.98) 8%,
-    rgba(248, 250, 252, 0.82) 22%,
-    rgba(248, 250, 252, 0.35) 42%,
-    rgba(248, 250, 252, 0.05) 62%,
-    transparent 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      #f8fafc 0%,
+      rgba(248, 250, 252, 0.99) 7%,
+      rgba(248, 250, 252, 0.92) 18%,
+      rgba(248, 250, 252, 0.65) 32%,
+      rgba(248, 250, 252, 0.25) 48%,
+      rgba(248, 250, 252, 0.04) 68%,
+      transparent 100%
+    );
 }
 
 
-/* Contenedor */
+/* =========================
+   Contenido
+========================= */
+
 .hero__inner {
   position: relative;
 
@@ -69,71 +119,99 @@
 
   display: grid;
 
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns:
+    1.05fr
+    0.95fr;
 
   align-items: center;
 
   width: 100%;
   max-width: 1280px;
 
-  min-height: clamp(410px, 48vh, 490px);
+  min-height: clamp(430px, 50vh, 510px);
 
   margin: 0 auto;
 
-  padding: 24px 24px 26px;
+  padding:
+    30px
+    24px
+    32px;
 
   gap: 56px;
 }
 
 
-/* Texto */
+/* Texto izquierdo */
 
 .hero__content {
-  max-width: 600px;
+  position: relative;
+
+  max-width: 620px;
 }
 
 
-.hero__label {
-  display: inline-flex;
+/* Detalle encima del título */
 
-  padding: 8px 16px;
+.hero__content::before {
+  display: block;
 
-  color: #00769d;
+  width: 48px;
+  height: 4px;
 
-  background-color: rgba(236, 254, 255, 0.92);
+  margin-bottom: 18px;
 
-  border: 1px solid #bae6fd;
+  content: "";
+
+  background:
+    linear-gradient(
+      90deg,
+      #005b88,
+      #0081a7
+    );
+
   border-radius: 999px;
-
-  font-size: 13px;
-  font-weight: 800;
 }
 
+
+/* Título */
 
 .hero__content h1 {
   max-width: 650px;
 
-  margin-top: 18px;
+  margin: 0;
 
   color: #0f172a;
 
-  font-size: clamp(42px, 3.5vw, 56px);
+  font-size: clamp(43px, 3.7vw, 58px);
   font-weight: 900;
-  line-height: 1.08;
+  line-height: 1.06;
 
   letter-spacing: -0.045em;
 }
 
 
 .hero__content h1 span {
-  color: #006c97;
+  background:
+    linear-gradient(
+      90deg,
+      #005b88,
+      #0081a7
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
+
+/* Descripción */
 
 .hero__description {
   max-width: 570px;
 
-  margin-top: 14px;
+  margin-top: 18px;
 
   color: #475569;
 
@@ -143,7 +221,9 @@
 }
 
 
-/* Botones */
+/* =========================
+   Botones
+========================= */
 
 .hero__actions {
   display: flex;
@@ -152,7 +232,7 @@
 
   gap: 12px;
 
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 
@@ -165,9 +245,11 @@
 
   min-height: 48px;
 
-  padding: 0 22px;
+  padding:
+    0
+    22px;
 
-  border-radius: 16px;
+  border-radius: 15px;
 
   font-size: 14px;
   font-weight: 800;
@@ -177,132 +259,105 @@
   transition:
     transform 180ms ease,
     background-color 180ms ease,
+    border-color 180ms ease,
     box-shadow 180ms ease;
 }
 
+
+/* Botón principal */
 
 .hero__primary {
   gap: 9px;
 
   color: #ffffff;
 
-  background-color: #005b88;
+  background:
+    linear-gradient(
+      120deg,
+      #005b88,
+      #007ca3
+    );
 
-  box-shadow: 0 5px 14px rgba(0, 91, 136, 0.16);
+  box-shadow:
+    0 8px 20px rgba(0, 91, 136, 0.2);
 }
 
 
 .hero__primary:hover {
-  background-color: #004b75;
-
   transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(0, 91, 136, 0.27);
 }
 
+
+.hero__primary svg {
+  transition: transform 180ms ease;
+}
+
+
+.hero__primary:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* Botón secundario */
 
 .hero__secondary {
   color: #334155;
 
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(255, 255, 255, 0.88);
 
-  border: 1px solid #dbe4ee;
+  border: 1px solid #d5e0e9;
 
-  box-shadow: 0 3px 9px rgba(15, 23, 42, 0.05);
+  box-shadow:
+    0 4px 12px rgba(15, 23, 42, 0.05);
+
+  backdrop-filter: blur(5px);
 }
 
 
 .hero__secondary:hover {
+  transform: translateY(-2px);
+
+  color: #005b88;
+
   background-color: #ffffff;
 
-  transform: translateY(-2px);
+  border-color: #9dd8e8;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.08);
 }
 
-
-.hero__phrase {
-  display: inline-flex;
-  align-items: center;
-
-  gap: 10px;
-
-  margin-top: 20px;
-
-  color: #334155;
-
-  font-size: 14px;
-  font-weight: 700;
-}
-
-
-.hero__phrase::before {
-  width: 26px;
-  height: 3px;
-
-  content: "";
-
-  background-color: #0081a7;
-
-  border-radius: 999px;
-}
 
 /* Área derecha */
 
 .hero__visual {
-  min-height: 300px;
+  min-height: 310px;
 }
 
 
-
-/* Botón hacia siguiente parte */
-
-.hero__next {
-  position: absolute;
-
-  z-index: 5;
-
-  bottom: 18px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  padding: 8px 16px;
-
-  color: #006b94;
-
-  background-color: rgba(226, 240, 246, 0.95);
-
-  border-radius: 999px;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  text-decoration: none;
-
-  transition:
-    background-color 180ms ease,
-    transform 180ms ease;
-}
-
-
-.hero__next:hover {
-  background-color: #d8edf5;
-
-  transform:
-    translateX(-50%)
-    translateY(-2px);
-}
-
-
-/* Tablet */
+/* =========================
+   Tablet
+========================= */
 
 @media (max-width: 950px) {
+
   .hero__background {
     width: 100%;
 
-    opacity: 0.22;
+    opacity: 0.25;
   }
 
 
   .hero__image-fade {
-    background: rgba(248, 250, 252, 0.55);
+    background:
+      linear-gradient(
+        90deg,
+        rgba(248, 250, 252, 0.97),
+        rgba(248, 250, 252, 0.75)
+      );
   }
 
 
@@ -311,8 +366,10 @@
 
     min-height: auto;
 
-    padding-top: 70px;
-    padding-bottom: 100px;
+    padding:
+      62px
+      24px
+      68px;
   }
 
 
@@ -327,28 +384,35 @@
 }
 
 
-/* Celular */
+/* =========================
+   Celular
+========================= */
 
 @media (max-width: 650px) {
-  .hero {
-    min-height: auto;
-  }
-
 
   .hero__inner {
     padding:
-      56px
+      48px
       20px
-      100px;
+      54px;
+  }
+
+
+  .hero__content::before {
+    width: 40px;
+
+    margin-bottom: 15px;
   }
 
 
   .hero__content h1 {
-    font-size: 42px;
+    font-size: clamp(38px, 11vw, 47px);
   }
 
 
   .hero__description {
+    margin-top: 16px;
+
     font-size: 16px;
   }
 
@@ -357,11 +421,34 @@
     flex-direction: column;
 
     align-items: stretch;
+
+    margin-top: 22px;
   }
 
 
   .hero__primary,
   .hero__secondary {
     width: 100%;
+  }
+}
+
+
+/* =========================
+   Accesibilidad
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero__background img {
+    animation: none;
+
+    transform: scale(1.03);
+  }
+
+
+  .hero__primary,
+  .hero__secondary,
+  .hero__primary svg {
+    transition: none;
   }
 }

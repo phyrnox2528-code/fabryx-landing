@@ -13,7 +13,7 @@ const benefits = [
     icon: Boxes,
     title: 'Información centralizada',
     description:
-      'Consulta materiales, producto terminado, movimientos y órdenes desde una misma plataforma.',
+      'Consulta materiales, procesos, movimientos, órdenes e inventario desde un mismo lugar.',
   },
   {
     icon: SearchCheck,
@@ -25,7 +25,7 @@ const benefits = [
     icon: ClipboardCheck,
     title: 'Mejor seguimiento',
     description:
-      'Mantén un registro más claro de órdenes, movimientos y avances dentro de la operación.',
+      'Mantén un registro más claro de órdenes, movimientos y avances en procesos de producción.',
   },
   {
     icon: Workflow,
@@ -58,29 +58,11 @@ function SolutionSection() {
           </p>
 
           <p className="solution-secondary-text">
-            Cada módulo está pensado para separar la información según el área
+            "Cada vista está pensada está pensada para separar la información según el área
             de trabajo, evitando mezclar procesos y facilitando las consultas
             del día a día.
           </p>
 
-          <div className="solution-highlight">
-
-            <div className="solution-highlight-icon">
-              <Layers3 size={23} strokeWidth={2.5} />
-            </div>
-
-            <div>
-              <h3>
-                Un sistema modular
-              </h3>
-
-              <p>
-                Puedes trabajar diferentes áreas de la operación sin perder
-                una estructura clara y organizada.
-              </p>
-            </div>
-
-          </div>
 
         </div>
 

@@ -2,7 +2,7 @@ import {
   Boxes,
   CalendarDays,
   ClipboardList,
-  WalletCards,
+  CircleDollarSign,
   Route,
 } from 'lucide-react'
 
@@ -17,7 +17,7 @@ const modules = [
     items: [
       'Materia prima',
       'Producto terminado',
-      'Material pigmentado',
+      'Explosión de material',
     ],
   },
   {
@@ -43,7 +43,7 @@ const modules = [
     ],
   },
   {
-    icon: WalletCards,
+    icon: CircleDollarSign,
     title: 'Finanzas y Tesorería',
     description:
       'Mantén organizada la información financiera relacionada con la operación interna.',

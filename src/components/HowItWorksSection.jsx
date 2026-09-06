@@ -1,9 +1,12 @@
 import {
-  Search,
-  Boxes,
-  ClipboardList,
-  Activity,
-  LayoutDashboard,
+  FilePlus2,
+  ClipboardPlus,
+  PackageSearch,
+  CalendarClock,
+  UserRoundCheck,
+  ReceiptText,
+  BadgeDollarSign,
+  BarChart3,
 } from 'lucide-react'
 
 import '../styles/how-it-works-section.css'
@@ -11,38 +14,59 @@ import '../styles/how-it-works-section.css'
 const steps = [
   {
     number: '01',
-    icon: Search,
-    title: 'Consulta la información',
+    icon: FilePlus2,
+    title: 'Alta de información esencial',
     description:
-      'Busca materiales, productos, órdenes y datos necesarios desde una misma plataforma.',
+      'Registra la información necesaria para comenzar a trabajar.',
   },
   {
     number: '02',
-    icon: Boxes,
-    title: 'Revisa existencias',
+    icon: ClipboardPlus,
+    title: 'Levantar órdenes',
     description:
-      'Consulta qué materiales o productos están disponibles antes de continuar con la operación.',
+      'Captura las órdenes y los datos necesarios.',
   },
   {
     number: '03',
-    icon: ClipboardList,
-    title: 'Relaciona órdenes y procesos',
+    icon: PackageSearch,
+    title: 'Explosión de material',
     description:
-      'Organiza la información necesaria para cada orden y los procesos relacionados con ella.',
+      'Consulta y calcula los materiales necesarios para cada orden.',
   },
   {
     number: '04',
-    icon: Activity,
-    title: 'Registra movimientos',
+    icon: CalendarClock,
+    title: 'Programación de inyección',
     description:
-      'Mantén un seguimiento más claro de movimientos, avances y cambios dentro de la operación.',
+      'Organiza las órdenes de acuerdo con la producción.',
   },
   {
     number: '05',
-    icon: LayoutDashboard,
-    title: 'Consulta todo desde un solo lugar',
+    icon: UserRoundCheck,
+    title: 'Asignación de trabajo',
     description:
-      'Obtén una visión más organizada del negocio sin depender de múltiples archivos separados.',
+      'Asigna las actividades entre las áreas de operación.',
+  },
+  {
+    number: '06',
+    icon: ReceiptText,
+    title: 'Notas contables',
+    description:
+      'Registra y consulta información relacionada con movimientos contables.',
+  },
+  {
+    number: '07',
+    icon: BadgeDollarSign,
+    title: 'Nómina',
+    description:
+      'Organiza los pagos del personal para mantener un mejor control.',
+  },
+  {
+    number: '08',
+    icon: BarChart3,
+    title: 'Reportes',
+    description:
+      'Consulta información resumida para revisar resultados y dar seguimiento.',
   },
 ]
 
@@ -62,13 +86,13 @@ function HowItWorksSection() {
           </span>
 
           <h2>
-            Una operación más clara
-            <span> paso a paso</span>
+            De la información inicial
+            <span> al seguimiento final</span>
           </h2>
 
           <p>
-            FABRYX ayuda a organizar la información diaria para que consultar,
-            registrar y dar seguimiento a los procesos sea más sencillo.
+            FABRYX conecta diferentes etapas de la operación para mantener
+            la información organizada durante todo el proceso.
           </p>
 
         </div>
@@ -88,11 +112,14 @@ function HowItWorksSection() {
                 <div className="how-step-top">
 
                   <span className="how-number">
-                    {step.number}
+                    Paso {step.number}
                   </span>
 
                   <div className="how-icon">
-                    <Icon size={23} strokeWidth={2.4} />
+                    <Icon
+                      size={25}
+                      strokeWidth={2.3}
+                    />
                   </div>
 
                 </div>
@@ -111,18 +138,7 @@ function HowItWorksSection() {
 
         </div>
 
-        {/* Mensaje final */}
-        <div className="how-message">
-
-          <span>
-            De la consulta al seguimiento
-          </span>
-
-          <strong>
-            Toda la información dentro de una misma plataforma.
-          </strong>
-
-        </div>
+       
 
       </div>
     </section>

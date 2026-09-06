@@ -1,145 +1,198 @@
 .ideal-section {
   background-color: #ffffff;
-  padding: clamp(56px, 6vw, 80px) 24px;
+
+  padding:
+    34px
+    24px
+    58px;
+
+  scroll-margin-top: 62px;
 }
+
 
 .ideal-container {
   width: 100%;
   max-width: 1280px;
+
   margin: 0 auto;
 }
 
 
-/* Encabezado */
+/* =========================
+   Problemas principales
+========================= */
 
-.ideal-heading {
-  max-width: 760px;
-  margin: 0 auto;
+.ideal-problems {
   text-align: center;
 }
+
 
 .ideal-label {
   color: #0081a7;
 
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
 
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.ideal-heading h2 {
-  margin: 16px 0 0;
+
+.ideal-problems > h2 {
+  margin: 12px 0 0;
 
   color: #0f172a;
 
-  font-size: clamp(32px, 3vw, 40px);
+  font-size: clamp(30px, 3vw, 38px);
   font-weight: 900;
   line-height: 1.15;
 
   letter-spacing: -0.03em;
 }
 
-.ideal-heading h2 span {
+
+.ideal-problems > h2 span {
   color: #005b88;
 }
 
-.ideal-heading > p {
-  max-width: 680px;
 
-  margin: 20px auto 0;
+/* Cards superiores */
 
-  color: #64748b;
-
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.7;
-}
-
-
-/* Tarjetas */
-
-.ideal-grid {
+.ideal-problem-grid {
   display: grid;
 
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  gap: clamp(24px, 3vw, 32px);
+  gap: 14px;
 
-  margin-top: clamp(42px, 5vw, 56px);
+  margin-top: 24px;
 }
 
-.ideal-card {
-  grid-column: span 2;
 
-  padding: 28px;
+.ideal-problem-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-height: 68px;
+
+  padding: 13px 16px;
+
+  text-align: left;
 
   background-color: #ffffff;
 
   border: 1px solid #e2e8f0;
-  border-radius: 20px;
+  border-radius: 16px;
 
-  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.04);
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.ideal-card:hover {
-  transform: translateY(-4px);
+
+.ideal-problem-card:hover {
+  transform: translateY(-3px);
 
   border-color: #bae6fd;
 
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  box-shadow:
+    0 10px 22px rgba(15, 23, 42, 0.07);
 }
 
-.ideal-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
 
-.ideal-card:nth-child(5) {
-  grid-column: 4 / span 2;
-}
-
-.ideal-icon {
+.ideal-problem-icon {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
 
   color: #0081a7;
 
-  background-color: #ecfeff;
+  background-color: #e9f6f9;
 
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
-.ideal-card h3 {
-  margin: 20px 0 0;
+
+.ideal-problem-card h3 {
+  margin: 0;
 
   color: #0f172a;
 
-  font-size: 17px;
+  font-size: 13px;
   font-weight: 900;
 }
 
-.ideal-card p {
-  margin: 10px 0 0;
+
+/* Texto después de las cards */
+
+.ideal-problem-conclusion {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  margin: 16px auto 0;
 
   color: #64748b;
 
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.65;
 }
 
 
-/* Bloque inferior */
+.ideal-problem-conclusion strong {
+  color: #475569;
+
+  font-weight: 900;
+}
+
+
+.ideal-tagline {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 10px auto 0;
+
+  color: #1e293b;
+
+  font-size: 13px;
+  font-weight: 900;
+}
+
+
+.ideal-tagline::before,
+.ideal-tagline::after {
+  width: 28px;
+  height: 2px;
+
+  content: "";
+
+  background-color: #0081a7;
+}
+
+
+/* =========================
+   ¿Te resulta familiar?
+========================= */
 
 .ideal-current {
   display: grid;
@@ -148,10 +201,12 @@
 
   align-items: center;
 
-  gap: clamp(32px, 5vw, 64px);
+  gap: clamp(36px, 5vw, 64px);
 
-  margin-top: 64px;
-  padding: 48px;
+  margin-top: 44px;
+
+  padding:
+    clamp(34px, 4vw, 48px);
 
   background-color: #f8fafc;
 
@@ -159,29 +214,45 @@
   border-radius: 24px;
 }
 
-.ideal-current-text span {
+
+/* Texto izquierdo */
+
+.ideal-current-text > span {
   color: #0081a7;
 
   font-size: 12px;
   font-weight: 900;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.ideal-current-text h3 {
+
+.ideal-current-text h2 {
+  max-width: 540px;
+
   margin: 14px 0 0;
 
   color: #0f172a;
 
-  font-size: 27px;
+  font-size: clamp(27px, 2.5vw, 34px);
   font-weight: 900;
-  line-height: 1.25;
+  line-height: 1.2;
 
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
+
+.ideal-current-text h2 strong {
+  color: #005b88;
+
+  font-weight: 900;
+}
+
+
 .ideal-current-text p {
+  max-width: 540px;
+
   margin: 18px 0 0;
 
   color: #64748b;
@@ -197,10 +268,11 @@
 .ideal-checklist {
   display: grid;
 
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 14px;
+  gap: 13px;
 }
+
 
 .ideal-check {
   display: flex;
@@ -209,22 +281,40 @@
 
   gap: 12px;
 
-  padding: 15px;
+  min-height: 62px;
+
+  padding: 14px 15px;
 
   background-color: #ffffff;
 
   border: 1px solid #e2e8f0;
   border-radius: 14px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.ideal-check > div {
+
+.ideal-check:hover {
+  transform: translateY(-2px);
+
+  border-color: #bae6fd;
+
+  box-shadow:
+    0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+
+.ideal-check-icon {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
 
   flex-shrink: 0;
 
@@ -234,6 +324,7 @@
 
   border-radius: 9px;
 }
+
 
 .ideal-check span {
   color: #475569;
@@ -247,24 +338,16 @@
 /* Tablet */
 
 @media (max-width: 950px) {
-  .ideal-grid {
+
+  .ideal-problem-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ideal-card,
-  .ideal-card:nth-child(4),
-  .ideal-card:nth-child(5) {
-    grid-column: auto;
-  }
-
-  .ideal-card:last-child {
-    grid-column: 1 / -1;
-  }
 
   .ideal-current {
     grid-template-columns: 1fr;
 
-    gap: 38px;
+    gap: 32px;
   }
 }
 
@@ -272,39 +355,55 @@
 /* Celular */
 
 @media (max-width: 650px) {
+
   .ideal-section {
-    padding: clamp(56px, 6vw, 72px) 20px;
+    padding:
+      26px
+      20px
+      46px;
+
+    scroll-margin-top: 58px;
   }
 
-  .ideal-heading h2 {
-    font-size: clamp(32px, 8vw, 40px);
+
+  .ideal-problems > h2 {
+    font-size: 30px;
   }
 
-  .ideal-heading > p {
-    font-size: 16px;
-  }
 
-  .ideal-grid {
+  .ideal-problem-grid {
     grid-template-columns: 1fr;
 
-    margin-top: 42px;
+    margin-top: 22px;
   }
 
-  .ideal-card,
-  .ideal-card:last-child {
-    grid-column: auto;
+
+  .ideal-problem-conclusion {
+    flex-direction: column;
+
+    gap: 2px;
   }
+
 
   .ideal-current {
-    margin-top: 48px;
+    margin-top: 34px;
+
     padding: 26px;
   }
 
-  .ideal-current-text h3 {
-    font-size: 23px;
+
+  .ideal-current-text h2 {
+    font-size: 27px;
   }
+
 
   .ideal-checklist {
     grid-template-columns: 1fr;
+  }
+
+
+  .ideal-tagline::before,
+  .ideal-tagline::after {
+    width: 18px;
   }
 }

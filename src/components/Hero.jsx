@@ -20,13 +20,10 @@ function Hero() {
 
             <div className="hero__inner">
                 <div className="hero__content">
-                    <span className="hero__label">
-                        Todo en un mismo lugar
-                    </span>
-
+                   
                     <h1>
                         Controla inventario, producción y órdenes desde{' '}
-                        <span>un solo sistema</span>
+                        <span>un solo lugar</span>
                     </h1>
 
                     <p className="hero__description">

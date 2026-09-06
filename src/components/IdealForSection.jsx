@@ -1,46 +1,33 @@
 import {
-  Factory,
+  FileSpreadsheet,
+  MessageCircleMore,
   PackageSearch,
-  ClipboardList,
-  Boxes,
-  Workflow,
+  ClipboardClock,
   Check,
 } from 'lucide-react'
 
 import '../styles/ideal-for-section.css'
 
-const businessTypes = [
+
+const problems = [
   {
-    icon: Factory,
-    title: 'Negocios de producción',
-    description:
-      'Empresas que fabrican, transforman o procesan productos y necesitan mayor control sobre su operación.',
+    icon: FileSpreadsheet,
+    title: 'Archivos separados',
+  },
+  {
+    icon: MessageCircleMore,
+    title: 'Información por mensajes',
   },
   {
     icon: PackageSearch,
-    title: 'Negocios con inventario',
-    description:
-      'Operaciones que manejan materia prima, producto terminado y movimientos internos.',
+    title: 'Inventario poco claro',
   },
   {
-    icon: ClipboardList,
-    title: 'Negocios con órdenes',
-    description:
-      'Empresas que necesitan organizar pedidos, órdenes de trabajo o actividades de producción.',
-  },
-  {
-    icon: Boxes,
-    title: 'Procesos con materiales',
-    description:
-      'Operaciones donde es importante conocer qué materiales existen, cuánto se utiliza y qué hace falta.',
-  },
-  {
-    icon: Workflow,
-    title: 'Operaciones con varias áreas',
-    description:
-      'Negocios donde diferentes departamentos necesitan consultar y actualizar información relacionada.',
+    icon: ClipboardClock,
+    title: 'Seguimiento manual',
   },
 ]
+
 
 const currentProblems = [
   'Uso constante de Excel para controlar la operación',
@@ -51,6 +38,7 @@ const currentProblems = [
   'Información que depende demasiado de una sola persona',
 ]
 
+
 function IdealForSection() {
   return (
     <section
@@ -59,57 +47,66 @@ function IdealForSection() {
     >
       <div className="ideal-container">
 
-        {/* Encabezado */}
-        <div className="ideal-heading">
+        {/* Problemas principales */}
+        <div className="ideal-problems">
 
           <span className="ideal-label">
             Ideal para
           </span>
 
           <h2>
-            FABRYX puede ayudarte si tu operación
-            <span> necesita más orden</span>
+            ¿Tu empresa todavía
+            <span> trabaja así?</span>
           </h2>
 
-          <p>
-            La plataforma está pensada para negocios que necesitan controlar
-            materiales, inventario, órdenes y procesos internos de una forma
-            más clara.
+          <div className="ideal-problem-grid">
+
+            {problems.map((problem) => {
+              const Icon = problem.icon
+
+              return (
+                <article
+                  className="ideal-problem-card"
+                  key={problem.title}
+                >
+
+                  <div className="ideal-problem-icon">
+                    <Icon
+                      size={21}
+                      strokeWidth={2.4}
+                    />
+                  </div>
+
+                  <h3>
+                    {problem.title}
+                  </h3>
+
+                </article>
+              )
+            })}
+
+          </div>
+
+
+          <p className="ideal-problem-conclusion">
+            <strong>
+              FABRYX reúne estos procesos en un solo lugar
+            </strong>
+
+            <span>
+              para que la información deje de estar dispersa.
+            </span>
+          </p>
+
+
+          <p className="ideal-tagline">
+            Menos archivos sueltos. Más control sobre tu operación.
           </p>
 
         </div>
 
-        {/* Tipos de negocio */}
-        <div className="ideal-grid">
 
-          {businessTypes.map((business) => {
-            const Icon = business.icon
-
-            return (
-              <article
-                className="ideal-card"
-                key={business.title}
-              >
-
-                <div className="ideal-icon">
-                  <Icon size={24} strokeWidth={2.4} />
-                </div>
-
-                <h3>
-                  {business.title}
-                </h3>
-
-                <p>
-                  {business.description}
-                </p>
-
-              </article>
-            )
-          })}
-
-        </div>
-
-        {/* Problemas actuales */}
+        {/* Te resulta familiar */}
         <div className="ideal-current">
 
           <div className="ideal-current-text">
@@ -118,18 +115,19 @@ function IdealForSection() {
               ¿Te resulta familiar?
             </span>
 
-            <h3>
-              Especialmente útil si actualmente dependes de herramientas
-              separadas para controlar tu negocio.
-            </h3>
+            <h2>
+              Si tu operación depende de herramientas separadas,
+              <strong> FABRYX puede ayudarte a organizarla.</strong>
+            </h2>
 
             <p>
-              FABRYX busca concentrar la información operativa para reducir la
-              dependencia de procesos manuales y facilitar las consultas del
-              día a día.
+              FABRYX busca concentrar la información operativa para reducir
+              la dependencia de procesos manuales y facilitar las consultas
+              del día a día.
             </p>
 
           </div>
+
 
           <div className="ideal-checklist">
 
@@ -139,8 +137,11 @@ function IdealForSection() {
                 key={problem}
               >
 
-                <div>
-                  <Check size={16} strokeWidth={3} />
+                <div className="ideal-check-icon">
+                  <Check
+                    size={16}
+                    strokeWidth={3}
+                  />
                 </div>
 
                 <span>
