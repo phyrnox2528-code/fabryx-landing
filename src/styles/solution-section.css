@@ -1,11 +1,17 @@
 .solution-section {
   background-color: #f8fafc;
-  padding: clamp(56px, 6vw, 80px) 24px;
+
+  padding:
+    clamp(56px, 6vw, 80px)
+    24px;
 }
+
 
 .solution-container {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   align-items: center;
 
   width: 100%;
@@ -13,7 +19,8 @@
 
   margin: 0 auto;
 
-  gap: clamp(24px, 4vw, 56px);
+  gap:
+    clamp(24px, 4vw, 56px);
 }
 
 
@@ -22,6 +29,7 @@
 .solution-info {
   max-width: 580px;
 }
+
 
 .solution-label {
   color: #0081a7;
@@ -32,6 +40,7 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
+
 
 .solution-info h2 {
   margin: 16px 0 0;
@@ -45,6 +54,7 @@
   letter-spacing: -0.03em;
 }
 
+
 .solution-main-text {
   margin: 24px 0 0;
 
@@ -54,6 +64,7 @@
   font-weight: 500;
   line-height: 1.7;
 }
+
 
 .solution-secondary-text {
   margin: 16px 0 0;
@@ -70,11 +81,13 @@
 
 .solution-highlight {
   display: flex;
+
   align-items: flex-start;
 
   gap: 16px;
 
   margin-top: 32px;
+
   padding: 20px;
 
   background-color: #ecfeff;
@@ -82,7 +95,6 @@
   border: 1px solid #cffafe;
   border-radius: 18px;
 }
-
 
 
 .solution-highlight h3 {
@@ -93,6 +105,7 @@
   font-size: 15px;
   font-weight: 900;
 }
+
 
 .solution-highlight p {
   margin: 6px 0 0;
@@ -115,6 +128,7 @@
   gap: 18px;
 }
 
+
 .solution-card {
   min-height: 210px;
 
@@ -125,24 +139,14 @@
   border: 1px solid #e2e8f0;
   border-radius: 20px;
 
-  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.04);
 }
 
-.solution-card:hover {
-  transform: translateY(-4px);
-
-  border-color: #bae6fd;
-
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-}
 
 .solution-card-icon {
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -156,6 +160,7 @@
   border-radius: 15px;
 }
 
+
 .solution-card h3 {
   margin: 20px 0 0;
 
@@ -164,6 +169,7 @@
   font-size: 16px;
   font-weight: 900;
 }
+
 
 .solution-card p {
   margin: 10px 0 0;
@@ -179,11 +185,13 @@
 /* Tablet */
 
 @media (max-width: 950px) {
+
   .solution-container {
     grid-template-columns: 1fr;
 
     gap: 48px;
   }
+
 
   .solution-info {
     max-width: 720px;
@@ -194,21 +202,28 @@
 /* Celular */
 
 @media (max-width: 650px) {
+
   .solution-section {
-    padding: clamp(56px, 6vw, 72px) 20px;
+    padding:
+      clamp(56px, 6vw, 72px)
+      20px;
   }
+
 
   .solution-info h2 {
     font-size: 32px;
   }
 
+
   .solution-main-text {
     font-size: 16px;
   }
 
+
   .solution-benefits {
     grid-template-columns: 1fr;
   }
+
 
   .solution-card {
     min-height: auto;

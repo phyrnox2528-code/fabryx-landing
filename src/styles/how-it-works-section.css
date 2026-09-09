@@ -15,7 +15,9 @@
 }
 
 
-/* Encabezado */
+/* =========================
+   Encabezado
+========================= */
 
 .how-heading {
   max-width: 760px;
@@ -68,12 +70,15 @@
 }
 
 
-/* Grid de pasos */
+/* =========================
+   Grid de pasos
+========================= */
 
 .how-steps {
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
   gap: 18px;
 
@@ -81,7 +86,9 @@
 }
 
 
-/* Cards */
+/* =========================
+   Cards
+========================= */
 
 .how-step {
   position: relative;
@@ -106,14 +113,118 @@
   box-shadow:
     0 6px 18px rgba(15, 23, 42, 0.05);
 
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    border-color 0.22s ease;
+  animation:
+    howStepSequence
+    15s
+    ease-in-out
+    infinite;
 }
 
 
-/* Línea azul superior */
+/* PASO 01 */
+
+.how-step:nth-child(1) {
+  animation-delay: 1s;
+}
+
+
+/* PASO 02 */
+
+.how-step:nth-child(2) {
+  animation-delay: 3s;
+}
+
+
+/* PASO 03 */
+
+.how-step:nth-child(3) {
+  animation-delay: 5s;
+}
+
+
+/* PASO 04 */
+
+.how-step:nth-child(4) {
+  animation-delay: 7s;
+}
+
+
+/* PASO 05 */
+
+.how-step:nth-child(5) {
+  animation-delay: 9s;
+}
+
+
+/* PASO 06 */
+
+.how-step:nth-child(6) {
+  animation-delay: 11s;
+}
+
+
+/* PASO 07 */
+
+.how-step:nth-child(7) {
+  animation-delay: 13s;
+}
+
+
+/* PASO 08 */
+
+.how-step:nth-child(8) {
+  animation-delay: 15s;
+}
+
+
+/* Animación en orden */
+
+@keyframes howStepSequence {
+
+  0% {
+    transform: translateY(0);
+
+    border-color: #dbe5ed;
+
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.05);
+  }
+
+
+  4% {
+    transform: translateY(-7px);
+
+    border-color: #8fd3e5;
+
+    box-shadow:
+      0 16px 30px rgba(0, 91, 136, 0.13);
+  }
+
+
+  9% {
+    transform: translateY(0);
+
+    border-color: #dbe5ed;
+
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.05);
+  }
+
+
+  100% {
+    transform: translateY(0);
+
+    border-color: #dbe5ed;
+
+    box-shadow:
+      0 6px 18px rgba(15, 23, 42, 0.05);
+  }
+}
+
+
+/* =========================
+   Línea azul superior
+========================= */
 
 .how-step::before {
   position: absolute;
@@ -135,19 +246,9 @@
 }
 
 
-/* Hover */
-
-.how-step:hover {
-  transform: translateY(-6px);
-
-  border-color: #9dd8e8;
-
-  box-shadow:
-    0 16px 32px rgba(15, 23, 42, 0.1);
-}
-
-
-/* Parte superior */
+/* =========================
+   Parte superior
+========================= */
 
 .how-step-top {
   display: flex;
@@ -160,7 +261,9 @@
 /* Número */
 
 .how-number {
-  padding: 6px 10px;
+  padding:
+    6px
+    10px;
 
   color: #006d96;
 
@@ -177,7 +280,9 @@
 }
 
 
-/* Icono */
+/* =========================
+   Icono
+========================= */
 
 .how-icon {
   display: flex;
@@ -196,21 +301,12 @@
 
   border: 1px solid #d2edf4;
   border-radius: 15px;
-
-  transition:
-    transform 0.22s ease,
-    background-color 0.22s ease;
 }
 
 
-.how-step:hover .how-icon {
-  transform: scale(1.08);
-
-  background-color: #d9f1f7;
-}
-
-
-/* Texto */
+/* =========================
+   Texto
+========================= */
 
 .how-step h3 {
   margin: 18px 0 0;
@@ -234,22 +330,25 @@
 }
 
 
-/* Mensaje inferior */
-
-
-
-/* Laptop */
+/* =========================
+   Laptop
+========================= */
 
 @media (max-width: 1050px) {
+
   .how-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 }
 
 
-/* Celular */
+/* =========================
+   Celular
+========================= */
 
 @media (max-width: 650px) {
+
   .how-section {
     padding:
       48px
@@ -258,7 +357,8 @@
 
 
   .how-heading h2 {
-    font-size: clamp(30px, 8vw, 38px);
+    font-size:
+      clamp(30px, 8vw, 38px);
   }
 
 
@@ -279,5 +379,16 @@
   .how-step {
     min-height: auto;
   }
+}
 
+
+/* =========================
+   Accesibilidad
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .how-step {
+    animation: none;
+  }
 }

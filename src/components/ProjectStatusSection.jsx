@@ -60,11 +60,6 @@ function ProjectStatusSection() {
               necesitan controlar mejor.
             </p>
 
-            <a href="#contacto">
-              Solicitar una demostración
-              <ArrowRight size={18} strokeWidth={2.5} />
-            </a>
-
           </div>
 
           {/* Tarjetas */}
