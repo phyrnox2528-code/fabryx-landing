@@ -75,12 +75,42 @@ function ContactSection() {
   }
 
 
-  const handleSubmit = (event) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    setIsSubmitting(true)
 
-    console.log(formData)
+    try {
+      const response = await fetch('https://formspree.io/f/mwlkdpez', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          name: '',
+          business: '',
+          phone: '',
+          industry: '',
+          message: ''
+        })
+      } else {
+        alert('Hubo un problema al enviar la información. Inténtalo de nuevo.')
+      }
+    } catch (error) {
+      console.error('Error al enviar:', error)
+      alert('Error de conexión. Inténtalo de nuevo.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
-
 
   return (
     <section
@@ -383,14 +413,20 @@ function ContactSection() {
             </div>
 
 
-            <button
-              type="submit"
-              className="contact-submit"
-            >
-              Solicitar información
-
-              <Send size={18} strokeWidth={2.4} />
-            </button>
+            {isSubmitted ? (
+              <div className="contact-success-message" style={{ textAlign: 'center', padding: '12px', color: '#005b88', fontWeight: 'bold' }}>
+                ¡Gracias! Hemos recibido tus datos y te contactaremos a la brevedad.
+              </div>
+            ) : (
+              <button
+                type="submit"
+                className="contact-submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Enviando...' : 'Solicitar información'}
+                <Send size={18} strokeWidth={2.4} />
+              </button>
+            )}
 
 
             <p className="contact-form-note">
