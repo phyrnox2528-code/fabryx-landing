@@ -182,13 +182,14 @@ function ContactSection() {
                 </strong>
               </div>
 
-              <button
-                type="button"
+              <a
+                href="https://wa.me/524761012619?text=Hola,%20me%20interesa%20obtener%20más%20información%20sobre%20Fabryx"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="contact-whatsapp-button"
-                disabled
               >
                 Escribir
-              </button>
+              </a>
             </div>
 
           </div>
