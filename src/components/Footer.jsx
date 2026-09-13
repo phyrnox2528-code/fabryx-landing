@@ -1,6 +1,5 @@
 import {
   Mail,
-  MessageCircle,
   ArrowUp,
 } from 'lucide-react'
 
@@ -98,25 +97,14 @@ function Footer() {
 
             <div className="footer-contact">
 
-              <a href="mailto:contacto@fabryx.mx">
+              <a href="mailto:admin@fabryx.net" aria-label="Enviar correo a admin@fabryx.net">
 
                 <Mail
                   size={17}
                   strokeWidth={2.3}
                 />
 
-                contacto@fabryx.mx
-
-              </a>
-
-              <a href="#contacto">
-
-                <MessageCircle
-                  size={17}
-                  strokeWidth={2.3}
-                />
-
-                Solicitar información
+                admin@fabryx.net
 
               </a>
 
